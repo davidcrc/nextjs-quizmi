@@ -208,3 +208,58 @@ npx prisma init
 ```bash
 npx prisma db push
 ```
+
+- create connect prisma on lib/db.ts
+
+<!--  -->
+
+# Add NexAuth
+
+```bash
+yarn add next-auth
+```
+
+- setup config in lib/nextAuth.ts
+
+```bash
+yarn add @next-auth/prisma-adapter
+```
+
+- For typescript purposes add: environment.d.ts
+
+```ts
+namespace NodeJS {
+  interface ProcessEnv {
+    NEXTAUTH_SECRET: string;
+    GOOGLE_CLIENT_ID: string;
+    GOOGLE_CLIENT_SECRET: string;
+  }
+}
+```
+
+- Create a project on google consle
+  => Api
+  => credentials
+  => Pantalla de consentimiento (Externos)
+  => fill forms (just necessary) , keep saving
+  => Publish App.
+
+- create credentiasl:
+  => Create Oauth client ID
+  => web application
+  => create name
+  => Javascript origins ( http://localhost:3000 )
+  => Authorised redirect URIs (http://localhost:3000/api/auth/callback/google)
+  +> create.
+
+- then create: src/app/api/auth/[...auth]/route.ts
+
+```ts
+import NextAuth from 'next-auth/next';
+
+import { authOptions } from '@/lib/nextAuth';
+
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };
+```
