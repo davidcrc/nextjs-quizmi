@@ -170,3 +170,21 @@ yarn add -D eslint-plugin-import eslint-plugin-unused-imports
   }
 }
 ```
+
+<!--  -->
+
+# Add shadcn/ui
+
+- https://ui.shadcn.com/docs/installation/next
+
+- In neccesary add componet by component
+
+```bash
+npx shadcn-ui@latest init
+```
+
+- Options: yes > NewYork > Slate > src/app/globals.css > yes > Intro > Intro > Intro > yes > yes
+
+```bash
+npx shadcn-ui@latest add button
+```
