@@ -252,7 +252,7 @@ namespace NodeJS {
   => Authorised redirect URIs (http://localhost:3000/api/auth/callback/google)
   +> create.
 
-- then create: src/app/api/auth/[...auth]/route.ts
+- then create: src/app/api/auth/[...nextauth]/route.ts
 
 ```ts
 import NextAuth from 'next-auth/next';
@@ -262,4 +262,24 @@ import { authOptions } from '@/lib/nextAuth';
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
+```
+
+<!--  -->
+
+# Add dropdown-menu from shadcn
+
+```bash
+npx shadcn-ui@latest add dropdown-menu
+```
+
+# Add avatar from shadcn
+
+```bash
+npx shadcn-ui@latest add avatar
+```
+
+# Add lucid icons
+
+```bash
+yarn add lucide-react
 ```
