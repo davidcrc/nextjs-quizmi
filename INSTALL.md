@@ -188,3 +188,23 @@ npx shadcn-ui@latest init
 ```bash
 npx shadcn-ui@latest add button
 ```
+
+# Add Prisma
+
+```bash
+yarn add -D prisma
+```
+
+```bash
+yarn add @prisma/client
+```
+
+```bash
+npx prisma init
+```
+
+- to push
+
+```bash
+npx prisma db push
+```
